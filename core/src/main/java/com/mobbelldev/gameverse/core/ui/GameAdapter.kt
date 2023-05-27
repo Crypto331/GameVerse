@@ -51,4 +51,6 @@ class GameAdapter : ListAdapter<Game, GameAdapter.GameViewHolder>(DiffUtilHelper
     override fun onBindViewHolder(holder: GameViewHolder, position: Int) {
         holder.bind(getItem(position))
     }
+
+
 }

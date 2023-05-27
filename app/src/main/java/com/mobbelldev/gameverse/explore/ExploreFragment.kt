@@ -37,7 +37,7 @@ class ExploreFragment : Fragment() {
             setOnItemClickCallback(object : GameAdapter.OnItemClickCallback {
                 override fun onItemSelected(game: Game) {
                     NavigationUtils.showSelectedData(
-                        context,
+                        requireActivity(),
                         game,
                         exploreViewModel,
                         viewLifecycleOwner

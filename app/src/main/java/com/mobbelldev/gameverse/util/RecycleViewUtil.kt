@@ -17,4 +17,5 @@ object RecycleViewUtil {
             this.adapter = adapter
         }
     }
+
 }

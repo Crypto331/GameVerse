@@ -25,22 +25,22 @@ class HomeFragment : Fragment() {
         GameAdapter().apply {
             setOnItemClickCallback(object : GameAdapter.OnItemClickCallback {
                 override fun onItemSelected(game: Game) {
-                    NavigationUtils.showSelectedData(context, game)
+                    NavigationUtils.showSelectedData(requireActivity(), game)
                 }
 
             })
         }
     }
 
-    private val binding: FragmentHomeBinding by lazy {
-        FragmentHomeBinding.inflate(layoutInflater)
-    }
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
+        _binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
@@ -83,8 +83,14 @@ class HomeFragment : Fragment() {
             RecycleViewUtil.setupRecyclerView(
                 binding.recycleViewGame,
                 gameAdapter,
-                requireContext()
+                requireActivity()
             )
         }
+    }
+
+    override fun onDestroyView() {
+        binding.root.removeAllViews()
+        _binding = null
+        super.onDestroyView()
     }
 }
