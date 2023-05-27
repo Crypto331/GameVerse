@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/BackgroundTheme"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue_background_night"
     tools:context=".home.HomeFragment">
 
     <androidx.recyclerview.widget.RecyclerView

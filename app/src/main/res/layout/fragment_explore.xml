@@ -2,9 +2,9 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/BackgroundTheme"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue_background_night"
     tools:context=".explore.ExploreFragment">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -44,7 +44,8 @@
         android:paddingTop="100dp"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/lurking_cat" />
+        app:lottie_rawRes="@raw/lurking_cat"
+        tools:visibility="gone" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottie_not_found"

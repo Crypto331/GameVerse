@@ -27,4 +27,8 @@
         <item name="cornerSizeBottomRight">40dp</item>
         <item name="cornerSizeBottomLeft">40dp</item>
     </style>
+
+    <style name="BackgroundTheme">
+        <item name="android:background">@color/blue_background_night</item>
+    </style>
 </resources>
