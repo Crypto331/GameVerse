@@ -32,7 +32,6 @@ dependencies {
     implementation project(":core")
 
     // Kotlin
-    //noinspection GradleDependency
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
     // dagger hilt

@@ -23,9 +23,15 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
 
-        buildConfigField "String", "BASE_URL", "\"https://api.rawg.io/api/\""
-        buildConfigField "String", "API_KEY", "\"1fbd12904f8a43fb98dba2d1cec10dc9\""
+        Properties properties = new Properties()
+        properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+        buildConfigField "String", "API_KEY", "\"${properties.getProperty('API_KEY')}\""
+        buildConfigField "String", "BASE_URL", "\"${properties.getProperty('BASE_URL')}\""
+        buildConfigField "String", "HOSTNAME", "\"api.rawg.io\""
+        buildConfigField "String", "SHA256", "\"sha256/qWyRb4XU1uly592SZOsXwXJ7CysZfa1SAHtM6Free6I=\""
         buildConfigField "String", "ENCRYPT", "\"gameverse\""
+        buildConfigField "String", "DATABASE", "\"Game.db\""
     }
 
     buildTypes {
@@ -49,7 +55,6 @@ android {
 
 dependencies {
     // Kotlin
-    //noinspection GradleDependency
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
     // SQLCipher

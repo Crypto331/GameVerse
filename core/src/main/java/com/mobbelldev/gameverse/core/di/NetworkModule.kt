@@ -6,6 +6,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import okhttp3.CertificatePinner
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -27,6 +28,16 @@ class NetworkModule {
 
     @Provides
     fun provideOkHttpClient(): OkHttpClient {
+        val certificatePinner = CertificatePinner.Builder()
+            .add(
+                BuildConfig.HOSTNAME,
+                BuildConfig.SHA256
+            )
+            .build()
+        val loggingInterceptor = HttpLoggingInterceptor().apply {
+            level =
+                if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.NONE
+        }
         return OkHttpClient.Builder()
             .addInterceptor { chain ->
                 var chainRequest = chain.request()
@@ -38,11 +49,10 @@ class NetworkModule {
                     .addHeader("Accept", "application/json").build()
                 chain.proceed(chainRequest)
             }
-            .addInterceptor(if (BuildConfig.DEBUG) HttpLoggingInterceptor().apply {
-                level = HttpLoggingInterceptor.Level.BODY
-            } else HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.NONE })
+            .addInterceptor(loggingInterceptor)
             .connectTimeout(120, TimeUnit.SECONDS)
             .readTimeout(120, TimeUnit.SECONDS)
+            .certificatePinner(certificatePinner)
             .build()
     }
 }

@@ -25,7 +25,7 @@ class DatabaseModule {
         return Room.databaseBuilder(
             context,
             GameDatabase::class.java,
-            GAME_DB
+            BuildConfig.DATABASE
         ).fallbackToDestructiveMigration()
             .openHelperFactory(factory)
             .build()
@@ -33,8 +33,4 @@ class DatabaseModule {
 
     @Provides
     fun provideGameDao(database: GameDatabase): GameDao = database.gameDao()
-
-    companion object {
-        private const val GAME_DB = "Game.db"
-    }
 }
