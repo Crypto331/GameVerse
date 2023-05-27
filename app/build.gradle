@@ -59,6 +59,9 @@ dependencies {
     //noinspection GradleDependency
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
+    // square up
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.10'
+
     // Legacy
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
