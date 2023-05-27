@@ -23,6 +23,7 @@
             android:id="@+id/action_exploreFragment_to_bookmarkFragment"
             app:destination="@id/bookmarkFragment" />
     </fragment>
+    <!--suppress AndroidDomInspection -->
     <fragment
         android:id="@+id/bookmarkFragment"
         android:name="com.mobbelldev.gameverse.bookmark.ui.BookmarkFragment"

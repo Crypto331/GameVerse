@@ -38,5 +38,6 @@
         android:paddingTop="100dp"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/cat_in_box" />
+        app:lottie_rawRes="@raw/cat_in_box"
+        tools:visibility="gone" />
 </FrameLayout>
