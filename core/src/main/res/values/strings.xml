@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_title">Title</string>
+    <string name="tv_released">Released</string>
+    <string name="tv_meta_score">3.5</string>
+
+    <string name="content_image_game">Game Image</string>
+</resources>

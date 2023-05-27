@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="400dp"
+    android:layout_marginStart="@dimen/dimens12"
+    android:layout_marginTop="@dimen/dimens12"
+    android:layout_marginEnd="@dimen/dimens12"
+    android:layout_marginBottom="@dimen/dimens12"
+    android:backgroundTint="@color/card_night"
+    app:cardCornerRadius="@dimen/dimens18">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_image_game"
+            android:layout_width="0dp"
+            android:layout_height="300dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/content_image_game"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimens12"
+            android:layout_marginTop="@dimen/dimens8"
+            android:layout_marginEnd="@dimen/dimens16"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/pink_text"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_released"
+            tools:text="@string/tv_title" />
+
+        <TextView
+            android:id="@+id/tv_released"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimens16"
+            android:layout_marginEnd="@dimen/dimens16"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/pink_text"
+            app:layout_constraintEnd_toStartOf="@+id/linear_layout_meta_score"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linear_layout_meta_score"
+            tools:text="@string/tv_released" />
+
+        <LinearLayout
+            android:id="@+id/linear_layout_meta_score"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginEnd="@dimen/dimens4"
+            android:background="@drawable/round_star_bad_24"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_image_game"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_image_game">
+
+            <TextView
+                android:id="@+id/tv_meta_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:text="@string/tv_meta_score" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

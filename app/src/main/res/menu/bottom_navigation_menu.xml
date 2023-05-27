@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/round_games_24"
+        android:title="@string/icon_games" />
+    <item
+        android:id="@+id/exploreFragment"
+        android:icon="@drawable/round_explore_24"
+        android:title="@string/icon_explore" />
+    <item
+        android:id="@+id/bookmarkFragment"
+        android:icon="@drawable/round_bookmark_24"
+        android:title="@string/icon_bookmark" />
+</menu>

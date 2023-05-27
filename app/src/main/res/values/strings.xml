@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Game Verse</string>
+
+    <!-- Title for bottom navigation (Icon) -->
+    <string name="icon_games">Games</string>
+    <string name="icon_explore">Explore</string>
+    <string name="icon_bookmark">Bookmark</string>
+
+    <string name="tv_description">Description: </string>
+    <string name="tv_exploring">Enjoy exploring the game.</string>
+
+    <string name="hint_search">Search…</string>
+    <string name="title_search">Search</string>
+    <string name="content_bookmark">Save the game to the bookmark page.</string>
+
+    <string name="title_bookmark">Bookmark</string>
+    <string name="text_added">Successfully added to bookmark</string>
+    <string name="text_removed">Successfully removed from bookmark</string>
+</resources>
